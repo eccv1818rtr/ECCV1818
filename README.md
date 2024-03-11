@@ -1,14 +1,7 @@
 # Self-Supervised Video Copy Localization with Regional Token Representation
 
 PyTorch implementation and pretrained models 
-for DINOv2. For details, please refer to the original papers.
-
-This paper proposes a self-supervised video copy localization framework. 
-The framework incorporates a Regional Token into the Vision Transformer, 
-which learns to focus on local regions within each frame using an asymmetric 
-training procedure. A novel strategy that leverages the Transitivity 
-Property is proposed to generate copied video pairs automatically, which 
-facilitates the training of the detector.
+for RTR. For details, please refer to the original papers.
 
 ## Preparation
 
@@ -62,10 +55,18 @@ bash test_eval.sh weights/ours_ssl_rtr.pth VCSL RTR
 
 # finetuning on VCSL
 bash test_eval.sh weights/ours_ft_rtr.pth VCSL RTR
+
+# self-supervised on VCDB
+bash test_eval.sh weights/ours_ssl_rtr.pth VCDB RTR
+
+# finetuning on VCDB
+bash test_eval.sh weights/ours_ft_rtr.pth VCDB RTR
 ```
 And the expected results are shown below:
 
-| Method          | Seg Recall | Seg Precision | Seg F1 | Video Recall | Video Precision | Video F1 |
-|-----------------|------------|---------------|--------|--------------|-----------------|----------|
-| Self-Supervised | 69.51      | 68.17         | 68.83  | 91.35        | 99.87           | 95.42    |
-| Finetuning      | 75.76      | 67.81         | 71.56  | 93.93        | 99.14           | 96.46    |
+| Dataset | Method    | Seg Recall | Seg Precision | Seg F1 | Video Recall | Video Precision | Video F1 |
+|---------|-----------|------------|---------------|--------|--------------|-----------------|----------|
+| VCSL    | Ours-ssl  | 69.51      | 68.17         | 68.83  | 91.35        | 99.87           | 95.42    |
+| VCSL    | Ours-ft   | 75.76      | 67.81         | 71.56  | 93.93        | 99.14           | 96.46    |
+| VCDB    | Ours-ssl  | 78.98      | 75.61         | 77.26  | 87.46        | 100.00          | 93.31    |
+| VCDB    | Ours-ft   | 80.74      | 76.91         | 78.78  | 88.89        | 100.00          | 94.12    |
