@@ -1,0 +1,17 @@
+loguru
+tqdm
+numpy==1.24.3
+pandas==2.0.3
+scipy==1.8.1
+tensorboard==2.14.0
+pycocotools
+tabulate
+opencv-python==4.8.0.74
+pillow
+matplotlib
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+timm
+thop
