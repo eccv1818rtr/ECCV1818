@@ -95,12 +95,6 @@ if __name__ == '__main__':
 
     # total positive samples are len(result_list) * ratio / (1 + ratio)
     # total negative samples are len(result_list) * 1 / (1 + ratio)
-    frr, far = (1 + ratio) / ratio * len(fr_list) / len(result_list), (1 + ratio) * len(fa_list) / len(result_list)
-    p = 1 - far
-    r = 1 - frr
-
-    logger.info(f"Video FRR: {frr:.2%}, Video FAR: {far:.2%}, F1: {2 * r * p / (r + p + 1e-6):.2%}")
-    print(f"Video FRR: {frr:.2%}, Video FAR: {far:.2%}, F1: {2 * r * p / (r + p + 1e-6):.2%}")
 
     fp = len(fa_list)
     tp = len(result_list) * ratio / (1 + ratio) - len(fr_list)

@@ -51,16 +51,16 @@ bash test_eval.sh [option1] [option2] [option3]
 To reproduce the  results of our RTR model on VCSL dataset, please run
 ```shell
 # Ours-ssl on VCSL
-bash test_eval.sh weights/ours_ssl_rtr.pth VCSL RTR
+bash scripts/test_eval.sh weights/ours_ssl_rtr.pth VCSL RTR
 
 # Ours-ft on VCSL
-bash test_eval.sh weights/ours_ft_rtr.pth VCSL RTR
+bash scripts/test_eval.sh weights/ours_ft_rtr.pth VCSL RTR
 
 # Ours-ssl on VCDB
-bash test_eval.sh weights/ours_ssl_rtr.pth VCDB RTR
+bash scripts/test_eval.sh weights/ours_ssl_rtr.pth VCDB RTR
 
 # Ours-ft on VCDB
-bash test_eval.sh weights/ours_ft_rtr.pth VCDB RTR
+bash scripts/test_eval.sh weights/ours_ft_rtr.pth VCDB RTR
 ```
 And the expected results are shown below:
 
